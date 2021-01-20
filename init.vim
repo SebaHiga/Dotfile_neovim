@@ -2,21 +2,25 @@ set number
 set relativenumber
 
 let mapleader = " "
-set timeoutlen=1000
+set timeoutlen=500
 
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>sc :nohlsearch<CR>
 nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
+nnoremap <silent> <leader>fs :w<CR>
 nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>wl <C-W>l
 nnoremap <silent> <leader>wh <C-W>h
 nnoremap <silent> <leader>wk <C-W>k
 nnoremap <silent> <leader>wj <C-W>j
-nnoremap <silent> <leader>wv <C-w>v
+nnoremap <silent> <leader>wv <C-w>v<C-w>l
+nnoremap <silent> <leader>wc :q<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'liuchengxu/vim-which-key'
 Plug 'severin-lemaignan/vim-minimap'
@@ -31,6 +35,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " NERD Commenter Settings
@@ -76,3 +81,38 @@ let g:syntastic_cpp_cpplint_exec = 'cpplint'
 " The following two lines are optional. Configure it to your liking!
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Color theme
+syntax on
+colorscheme onedark
+
+" Which key Mapping
+call which_key#register('<Space>', 'g:which_key_map')
+let g:which_key_map =  {}
+
+let g:which_key_map['w'] = {
+      \ 'name' : '+windows' ,
+      \ 'h' : ['<C-W>h'     , 'switch left']           ,
+      \ 'j' : ['<C-W>j'     , 'switch bottom']         ,
+      \ 'k' : ['<C-W>k'     , 'switch top']            ,
+      \ 'l' : ['<C-W>l'     , 'switch left']           ,
+      \ 'v' : ['<C-W>h'     , 'split vertical']        ,
+      \ 'c' : ['<C-W>j'     , 'close']                 ,
+      \ }
+
+let g:which_key_map['f'] = {
+      \ 'name' : '+file' ,
+      \ 's' : ['<C-W>h'     , 'save']                  ,
+      \ 't' : ['<C-W>h'     , 'toogle NERDTree']       ,
+      \ }
+
+let g:which_key_map['s'] = {
+      \ 'name' : '+search' ,
+      \ 'c' : ['<C-W>h'     , 'clear']                 ,
+      \}
+
+let g:which_key_map['b'] = {
+      \ 'name' : '+buffer' ,
+      \ 'n' : ['<C-W>h'     , 'next']                  ,
+      \ 'f' : ['<C-W>h'     , 'format']                ,
+      \ }
