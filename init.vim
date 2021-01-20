@@ -22,9 +22,10 @@ Plug 'scrooloose/nerdtree'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
-Plug 'severin-lemaignan/vim-minimap'
-" Plug 'koron/minimap-vim'
+" Plug 'severin-lemaignan/vim-minimap'
+Plug 'koron/minimap-vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'raimondi/delimitmate'
 Plug 'vim-syntastic/syntastic'
@@ -68,8 +69,10 @@ let g:NERDToggleCheckAllLines = 1
 
 " Airline Setting
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep = '|'
 let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme='onedark'
 
 " Minimap Settings
 let g:minimap_highlight='Visual'
