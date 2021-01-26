@@ -18,8 +18,10 @@ nnoremap <silent> <leader>wc :q<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 " Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,7 +30,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'koron/minimap-vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'raimondi/delimitmate'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 " Plug 'octol/vim-cpp-enhanced-highlight'
@@ -37,6 +39,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
 
 " NERD Commenter Settings
@@ -77,16 +81,9 @@ let g:airline_theme='onedark'
 " Minimap Settings
 let g:minimap_highlight='Visual'
 
-" C++ Settings
-" let g:syntastic_cpp_checkers = ['cpplint']
-# let g:syntastic_c_checkers = ['cpplint']
-# let g:syntastic_cpp_cpplint_exec = 'cpplint'
-# " The following two lines are optional. Configure it to your liking!
-# let g:syntastic_check_on_open = 1
-# let g:syntastic_check_on_wq = 0
 
 " Color theme
-syntax on
+" syntax on
 colorscheme onedark
 
 " Which key Mapping
@@ -282,3 +279,20 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" Scrolling
+if (&term =~ '^xterm' && &t_Co == 256)
+  set t_ut= | set ttyscroll=1
+endif
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+let g:comfortable_motion_friction = 80.0
+let g:comfortable_motion_air_drag = 2.0
