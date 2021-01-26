@@ -73,8 +73,8 @@ let g:NERDToggleCheckAllLines = 1
 
 " Airline Setting
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '|'
-let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='onedark'
 
@@ -85,7 +85,7 @@ let g:minimap_highlight='Visual'
 " Color theme
 " syntax on
 colorscheme onedark
-
+let g:airline_theme='deus'
 " Which key Mapping
 call which_key#register('<Space>', 'g:which_key_map')
 let g:which_key_map =  {}
