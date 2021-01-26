@@ -22,6 +22,7 @@ Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
+Plug 'romgrk/winteract.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -296,3 +297,6 @@ noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 let g:comfortable_motion_friction = 80.0
 let g:comfortable_motion_air_drag = 2.0
+
+" Interactive window resizing
+nmap <leader>w. :InteractiveWindow<CR>
