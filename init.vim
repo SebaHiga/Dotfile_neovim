@@ -16,6 +16,9 @@ nnoremap <silent> <leader>wj <C-W>j
 nnoremap <silent> <leader>wv <C-w>v<C-w>l
 nnoremap <silent> <leader>wc :q<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
+" Set a ; at the end of the line
+nnoremap <silent> ;; $a;<esc>
+nnoremap <silent> <leader>fzf :FZF<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf'
