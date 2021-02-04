@@ -6,7 +6,7 @@ set timeoutlen=500
 
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>sc :nohlsearch<CR>
-nnoremap <silent> <leader>ft :CHADopen<CR>
+nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
 nnoremap <silent> <leader>fs :w<CR>
 nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>wl <C-W>l
@@ -16,6 +16,7 @@ nnoremap <silent> <leader>wj <C-W>j
 nnoremap <silent> <leader>wv <C-w>v<C-w>l
 nnoremap <silent> <leader>wc :q<CR>
 nnoremap <silent> <leader>wq :qa<CR>
+nnoremap <silent> <leader>qq :wq!<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 " Set a ; at the end of the line
 nnoremap <silent> ;; $a;<esc>
@@ -23,8 +24,8 @@ nnoremap <silent> <leader>fzf :FZF<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf'
-" Plug 'scrooloose/nerdtree'
-Plug 'ms-jpq/chadtree'
+Plug 'scrooloose/nerdtree'
+" Plug 'ms-jpq/chadtree'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'romgrk/winteract.vim'
