@@ -17,6 +17,7 @@ nnoremap <silent> <leader>wv <C-w>v<C-w>l
 nnoremap <silent> <leader>ww :w!<CR>
 nnoremap <silent> <leader>wc :q<CR>
 nnoremap <silent> <leader>wq :wq!<CR>
+nnoremap <silent> <leader>qq :q!<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 " Set a ; at the end of the line
 nnoremap <silent> ;; $a;<esc>
@@ -44,11 +45,11 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 " Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'valloric/youcompleteme'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
 
