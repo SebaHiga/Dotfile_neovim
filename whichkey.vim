@@ -1,14 +1,14 @@
-let mapleader = " "
-set timeoutlen=500
+" Whichkey configuration file
 
+" Which key mapping and shortcuts definition
 let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
 let g:maplocalleader = ','
 let g:which_key_map =  {}
 set timeoutlen=500
-
-
-" Which key mapping and shortcuts definition
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 let g:which_key_map.s = { 'name' : 'search' }
 let g:which_key_map.s.c = 'clear search'

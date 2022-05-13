@@ -1,21 +1,27 @@
 set number
 set relativenumber
 
-runtime whichkey.vim
-runtime nerd.vim
-runtime shortcuts.vim
+exec 'source' neovim_dotfiles . '/whichkey.vim'
+exec 'source' neovim_dotfiles . '/nerd.vim'
+exec 'source' neovim_dotfiles . '/shortcuts.vim'
+" exec 'source' neovim_dotfiles . '/startify.vim'
+let g:mapleader="\<Space>"
 
 " Pluggins
 call plug#begin('~/.config/nvim/plugged')
+Plug 'glepnir/dashboard-nvim'
+Plug 'liuchengxu/vim-clap'
+
 Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 " Plug 'ms-jpq/chadtree'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
+Plug 'glepnir/dashboard-nvim'
 Plug 'romgrk/winteract.vim'
 " Plug 'burntsushi/ripgrep'
 Plug 'jremmen/vim-ripgrep'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -52,3 +58,12 @@ let g:minimap_highlight='Visual'
 " syntax on
 colorscheme onedark
 let g:airline_theme='deus'
+let g:dashboard_default_executive ='clap'
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
