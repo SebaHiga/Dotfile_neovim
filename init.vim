@@ -4,31 +4,62 @@ set relativenumber
 let mapleader = " "
 set timeoutlen=500
 
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+let g:which_key_map =  {}
+set timeoutlen=500
+
+
+" Which key mapping and shortcuts definition
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+let g:which_key_map.s = { 'name' : 'search' }
+let g:which_key_map.s.c = 'clear search'
 nnoremap <silent> <leader>sc :nohlsearch<CR>
+let g:which_key_map.s.v = 'reload vimrc'
+nnoremap <leader>sv :source $MYVIMRC<CR>
+let g:which_key_map.s.f = 'file fuzzy search'
+nnoremap <silent> <leader>sf :FZF<CR>
+
+let g:which_key_map.f = { 'name' : 'file' }
 nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
+let g:which_key_map.f.t = 'toggle file search'
 nnoremap <silent> <leader>bn :bnext<CR>
 "
-" Buffer actions
+" Window actions
+let g:which_key_map.w = { 'name' : 'window' }
+let g:which_key_map.w.w = 'write file'
 nnoremap <silent> <leader>ww :w!<CR>
+let g:which_key_map.w.c = 'close window'
 nnoremap <silent> <leader>wc :q<CR>
+let g:which_key_map.w.q = 'write and close'
 nnoremap <silent> <leader>wq :wq!<CR>
+"
+" Split windows commands
+let g:which_key_map.w.l = 'switch right'
+nnoremap <silent> <leader>wl <C-W>l
+let g:which_key_map.w.h = 'switch left'
+nnoremap <silent> <leader>wh <C-W>h
+let g:which_key_map.w.k = 'switch up'
+nnoremap <silent> <leader>wk <C-W>k
+let g:which_key_map.w.j = 'switch down'
+nnoremap <silent> <leader>wj <C-W>j
+let g:which_key_map.w.v = 'split vertical'
+nnoremap <silent> <leader>wv <C-w>v<C-w>l
+let g:which_key_map.w.s = 'split horizontal'
+nnoremap <silent> <leader>ws <C-w>s<C-w>l
+
+let g:which_key_map.q = { 'name' : 'quit' }
+let g:which_key_map.q.q = 'quit without saving'
 nnoremap <silent> <leader>qq :q!<CR>
+
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 
 " Exit insert mode with jj
-inoremap jj <ESC>
+inoremap jj <ESC>l
 
-" Split windows commands
-nnoremap <silent> <leader>wl <C-W>l
-nnoremap <silent> <leader>wh <C-W>h
-nnoremap <silent> <leader>wk <C-W>k
-nnoremap <silent> <leader>wj <C-W>j
-nnoremap <silent> <leader>wv <C-w>v<C-w>l
-nnoremap <silent> <leader>ws <C-w>s<C-w>l
 " Set a ; at the end of the line
 nnoremap <silent> ;; $a;<esc>
-nnoremap <silent> <leader>fzf :FZF<CR>
 
 " Pluggins
 call plug#begin('~/.config/nvim/plugged')
@@ -40,6 +71,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'romgrk/winteract.vim'
 " Plug 'burntsushi/ripgrep'
 Plug 'jremmen/vim-ripgrep'
+Plug 'mhinz/vim-startify'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -106,32 +138,4 @@ colorscheme onedark
 let g:airline_theme='deus'
 " Which key Mapping
 " call which_key#register('<Space>', 'g:which_key_map')
-let g:which_key_map =  {}
-
-let g:which_key_map['w'] = {
-      \ 'name' : '+windows' ,
-      \ 'h' : ['<C-W>h'     , 'Switch left']           ,
-      \ 'j' : ['<C-W>j'     , 'Switch bottom']         ,
-      \ 'k' : ['<C-W>k'     , 'Switch top']            ,
-      \ 'l' : ['<C-W>l'     , 'Switch left']           ,
-      \ 'v' : ['<C-W>h'     , 'Split vertical']        ,
-      \ 's' : ['<C-W>s'     , 'Split horizontal']        ,
-      \ 'c' : ['<C-W>j'     , 'Close']                 ,
-      \ }
-
-let g:which_key_map['f'] = {
-      \ 'name' : '+file' ,
-      \ 's' : ['<C-W>h'     , 'Save']                  ,
-      \ 't' : ['<C-W>h'     , 'Toogle NERDTree']       ,
-      \ }
-
-let g:which_key_map['s'] = {
-      \ 'name' : '+search' ,
-      \ 'c' : ['<C-W>h'     , 'Clear']                 ,
-      \}
-
-let g:which_key_map['b'] = {
-      \ 'name' : '+buffer' ,
-      \ 'n' : ['<C-W>h'     , 'Next']                  ,
-      \ 'f' : ['<C-W>h'     , 'Format']                ,
-      \ }
+call which_key#register('<Space>', "g:which_key_map")
