@@ -7,22 +7,30 @@ set timeoutlen=500
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>sc :nohlsearch<CR>
 nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
-nnoremap <silent> <leader>fs :w<CR>
 nnoremap <silent> <leader>bn :bnext<CR>
-nnoremap <silent> <leader>wl <C-W>l
-nnoremap <silent> <leader>wh <C-W>h
-nnoremap <silent> <leader>wk <C-W>k
-nnoremap <silent> <leader>wj <C-W>j
-nnoremap <silent> <leader>wv <C-w>v<C-w>l
+"
+" Buffer actions
 nnoremap <silent> <leader>ww :w!<CR>
 nnoremap <silent> <leader>wc :q<CR>
 nnoremap <silent> <leader>wq :wq!<CR>
 nnoremap <silent> <leader>qq :q!<CR>
 nnoremap <Leader>bf :<C-u>ClangFormat<CR>
+
+" Exit insert mode with jj
+inoremap jj <ESC>
+
+" Split windows commands
+nnoremap <silent> <leader>wl <C-W>l
+nnoremap <silent> <leader>wh <C-W>h
+nnoremap <silent> <leader>wk <C-W>k
+nnoremap <silent> <leader>wj <C-W>j
+nnoremap <silent> <leader>wv <C-w>v<C-w>l
+nnoremap <silent> <leader>ws <C-w>s<C-w>l
 " Set a ; at the end of the line
 nnoremap <silent> ;; $a;<esc>
 nnoremap <silent> <leader>fzf :FZF<CR>
 
+" Pluggins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
@@ -102,27 +110,28 @@ let g:which_key_map =  {}
 
 let g:which_key_map['w'] = {
       \ 'name' : '+windows' ,
-      \ 'h' : ['<C-W>h'     , 'switch left']           ,
-      \ 'j' : ['<C-W>j'     , 'switch bottom']         ,
-      \ 'k' : ['<C-W>k'     , 'switch top']            ,
-      \ 'l' : ['<C-W>l'     , 'switch left']           ,
-      \ 'v' : ['<C-W>h'     , 'split vertical']        ,
-      \ 'c' : ['<C-W>j'     , 'close']                 ,
+      \ 'h' : ['<C-W>h'     , 'Switch left']           ,
+      \ 'j' : ['<C-W>j'     , 'Switch bottom']         ,
+      \ 'k' : ['<C-W>k'     , 'Switch top']            ,
+      \ 'l' : ['<C-W>l'     , 'Switch left']           ,
+      \ 'v' : ['<C-W>h'     , 'Split vertical']        ,
+      \ 's' : ['<C-W>s'     , 'Split horizontal']        ,
+      \ 'c' : ['<C-W>j'     , 'Close']                 ,
       \ }
 
 let g:which_key_map['f'] = {
       \ 'name' : '+file' ,
-      \ 's' : ['<C-W>h'     , 'save']                  ,
-      \ 't' : ['<C-W>h'     , 'toogle NERDTree']       ,
+      \ 's' : ['<C-W>h'     , 'Save']                  ,
+      \ 't' : ['<C-W>h'     , 'Toogle NERDTree']       ,
       \ }
 
 let g:which_key_map['s'] = {
       \ 'name' : '+search' ,
-      \ 'c' : ['<C-W>h'     , 'clear']                 ,
+      \ 'c' : ['<C-W>h'     , 'Clear']                 ,
       \}
 
 let g:which_key_map['b'] = {
       \ 'name' : '+buffer' ,
-      \ 'n' : ['<C-W>h'     , 'next']                  ,
-      \ 'f' : ['<C-W>h'     , 'format']                ,
+      \ 'n' : ['<C-W>h'     , 'Next']                  ,
+      \ 'f' : ['<C-W>h'     , 'Format']                ,
       \ }
