@@ -3,7 +3,7 @@
 mkdir $HOME/.config/nvim
 INIT_FILE=$HOME/.config/nvim/init.vim
 
-if test -f ! "$INIT_FILE"; then
+if [ ! -f "$INIT_FILE" ]; then
     echo source $HOME/Documents/Dotfile_neovim/init.vim > $INIT_FILE
 fi
 
