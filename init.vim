@@ -4,7 +4,8 @@ set relativenumber
 exec 'source' neovim_dotfiles . '/whichkey.vim'
 exec 'source' neovim_dotfiles . '/nerd.vim'
 exec 'source' neovim_dotfiles . '/shortcuts.vim'
-" exec 'source' neovim_dotfiles . '/startify.vim'
+exec 'source' neovim_dotfiles . '/dashboard.vim'
+
 let g:mapleader="\<Space>"
 
 " Pluggins
