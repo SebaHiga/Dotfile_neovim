@@ -5,6 +5,8 @@ exec 'source' neovim_dotfiles . '/whichkey.vim'
 exec 'source' neovim_dotfiles . '/nerd.vim'
 exec 'source' neovim_dotfiles . '/shortcuts.vim'
 exec 'source' neovim_dotfiles . '/dashboard.vim'
+exec 'source' neovim_dotfiles . '/coc.vim'
+exec 'source' neovim_dotfiles . '/fzf.vim'
 
 let g:mapleader="\<Space>"
 
@@ -13,7 +15,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'glepnir/dashboard-nvim'
 Plug 'liuchengxu/vim-clap'
 
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'scrooloose/nerdtree'
 " Plug 'ms-jpq/chadtree'
 " Plug 'terryma/vim-multiple-cursors'
@@ -26,6 +29,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
 " Plug 'severin-lemaignan/vim-minimap'
 " Plug 'koron/minimap-vim'
@@ -54,6 +58,13 @@ let g:airline_theme='onedark'
 " Minimap Settings
 let g:minimap_highlight='Visual'
 
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 " Color theme
 " syntax on
