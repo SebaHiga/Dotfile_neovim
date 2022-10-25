@@ -17,6 +17,7 @@ let g:which_key_map.s.v = 'reload vimrc'
 nnoremap <leader>sv :source $MYVIMRC<CR>
 let g:which_key_map.s.f = 'file fuzzy search'
 nnoremap <silent> <leader>sf :FZF<CR>
+nnoremap <silent> <leader>sw :Rg<space>
 
 let g:which_key_map.f = { 'name' : 'file' }
 nnoremap <silent> <leader>ft :NERDTreeToggle<CR>

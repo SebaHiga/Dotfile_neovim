@@ -14,9 +14,11 @@ let g:mapleader="\<Space>"
 call plug#begin('~/.config/nvim/plugged')
 Plug 'glepnir/dashboard-nvim'
 Plug 'liuchengxu/vim-clap'
+Plug 'gabesoft/vim-ags'
 
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'scrooloose/nerdtree'
 " Plug 'ms-jpq/chadtree'
 " Plug 'terryma/vim-multiple-cursors'
