@@ -1,15 +1,6 @@
 set number
 set relativenumber
 
-exec 'source' neovim_dotfiles . '/whichkey.vim'
-exec 'source' neovim_dotfiles . '/nerd.vim'
-exec 'source' neovim_dotfiles . '/shortcuts.vim'
-exec 'source' neovim_dotfiles . '/dashboard.vim'
-exec 'source' neovim_dotfiles . '/coc.vim'
-exec 'source' neovim_dotfiles . '/fzf.vim'
-
-let g:mapleader="\<Space>"
-
 " Pluggins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'glepnir/dashboard-nvim'
@@ -73,11 +64,22 @@ set expandtab
 colorscheme onedark
 let g:airline_theme='deus'
 let g:dashboard_default_executive ='clap'
-nmap <Leader>ss :<C-u>SessionSave<CR>
-nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+" nmap <Leader>ss :<C-u>SessionSave<CR>
+" nmap <Leader>sl :<C-u>SessionLoad<CR>
+" nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+" nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+" nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+" nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+" nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+" nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+
+
+exec 'source' neovim_dotfiles . '/whichkey.vim'
+exec 'source' neovim_dotfiles . '/nerd.vim'
+exec 'source' neovim_dotfiles . '/shortcuts.vim'
+exec 'source' neovim_dotfiles . '/dashboard.vim'
+" exec 'source' neovim_dotfiles . '/coc.vim'
+exec 'source' neovim_dotfiles . '/fzf.vim'
+
+let g:mapleader="\<Space>"
+
