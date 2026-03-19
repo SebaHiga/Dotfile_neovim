@@ -1,9 +1,9 @@
 " Shortcuts
 "
-nnoremap <Leader>bf :<C-u>ClangFormat<CR>
+" nnoremap <Leader>bf :<C-u>ClangFormat<CR>
 
 " Exit insert mode with jj
-inoremap jj <ESC>l
+" inoremap jj <ESC>l
 
 " Set a ; at the end of the line
-nnoremap <silent> ;; $a;<esc>
+" nnoremap <silent> ;; $a;<esc>

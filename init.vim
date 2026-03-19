@@ -22,9 +22,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
-" Plug 'severin-lemaignan/vim-minimap'
+Plug 'severin-lemaignan/vim-minimap'
 " Plug 'koron/minimap-vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'raimondi/delimitmate'

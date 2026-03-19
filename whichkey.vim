@@ -10,21 +10,23 @@ call which_key#register('<Space>', "g:which_key_map")
 
 let g:maplocalleader = ','
 let g:which_key_map =  {}
-set timeoutlen=500
+set timeoutlen=100
 
-" let g:which_key_map.s = { 'name' : '+search' }
-" let g:which_key_map.s.c = ['', 'clear search']
+nnoremap <leader>vr :source $MYVIMRC<CR>
+let g:which_key_map.v = {
+      \ 'name' : '+vim',
+      \ 'r' : 'reload-config',
+      \ }
+
 nnoremap <silent> <leader>sc :nohlsearch<CR>
 nnoremap <silent> <leader>sf :FZF<CR>
 nnoremap <silent> <leader>sw :Rg<space>
 let g:which_key_map.s = {
       \ 'name' : '+search',
       \ 'c' : 'clear',
-      \ 'f' : 'fuzzy-file',
+      \ 'f' : 'file',
       \ 'w' : 'word',
       \ }
-" let g:which_key_map.s.v = 'reload vimrc'
-" nnoremap <leader>sv :source $MYVIMRC<CR>
 
 nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
 let g:which_key_map.f = {
